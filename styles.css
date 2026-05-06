@@ -305,9 +305,12 @@ textarea {
 .hero-main-shot img,
 .hero-detail-shot img,
 .story-photo img,
-.gallery-card img {
+.gallery-card img,
+.thumbnail-card img {
   height: 100%;
   object-fit: cover;
+  image-rendering: auto;
+  transform: translateZ(0);
 }
 
 .hero-detail-shot {
@@ -431,6 +434,22 @@ textarea {
   min-height: 34rem;
 }
 
+.thumbnail-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.thumbnail-card {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 22px;
+  background: rgba(255, 251, 246, 0.9);
+  box-shadow: 0 14px 32px rgba(113, 70, 52, 0.12);
+}
+
 .service-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 2rem;
@@ -545,6 +564,7 @@ textarea {
   .hero,
   .story,
   .gallery-grid,
+  .thumbnail-strip,
   .service-grid,
   .visit {
     grid-template-columns: 1fr;
